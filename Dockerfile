@@ -2,6 +2,8 @@ FROM php:cli-alpine
 
 ARG user=phpuser
 
+RUN apk add --update nodejs npm
+
 # Get latest Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
